@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/home';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import Navigation from './routes/Navigation';
 
 const getFonts = () =>
   Font.loadAsync({
@@ -15,7 +16,7 @@ export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
-    return <Home />;
+    return <Navigation />;
   } else {
     return (
       <AppLoading
