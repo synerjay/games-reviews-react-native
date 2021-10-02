@@ -9,9 +9,23 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='Review Details' component={ReviewDetails} />
+      <Stack.Navigator
+        initialRouteName='Home'
+        screenOptions={{
+          headerStyle: { backgroundColor: '#333', height: 60 }, // change the header color and height
+          headerTintColor: '#fff', // change font color
+        }}
+      >
+        <Stack.Screen
+          name='Home'
+          component={Home}
+          options={{ title: 'GameZone' }}
+        />
+        <Stack.Screen
+          name='Review Details'
+          component={ReviewDetails}
+          options={{ title: 'Reviews Details' }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
