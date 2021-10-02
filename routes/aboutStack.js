@@ -21,8 +21,10 @@ const AboutStack = ({ navigation }) => {
         component={About}
         options={{
           headerStyle: {
-            height: 90,
+            backgroundColor: '#333',
+            height: 90, // change the header color and height
           },
+          headerTintColor: '#fff', // change font color
           headerTitle: () => <Header title='About' navigation={navigation} />,
         }}
       />

@@ -13,7 +13,7 @@ const HomeStack = ({ navigation }) => {
     <Stack.Navigator
       initialRouteName='Home'
       screenOptions={{
-        headerStyle: { backgroundColor: '#333', height: 60 }, // change the header color and height
+        headerStyle: { backgroundColor: '#333', height: 90 }, // change the header color and height
         headerTintColor: '#fff', // change font color
       }}
     >
@@ -22,6 +22,7 @@ const HomeStack = ({ navigation }) => {
         component={Home}
         options={{
           headerStyle: {
+            backgroundColor: '#333',
             height: 90,
           },
           headerTitle: () => <Header title='Home' navigation={navigation} />,
@@ -30,14 +31,9 @@ const HomeStack = ({ navigation }) => {
       <Stack.Screen
         name='Review Details'
         component={ReviewDetails}
-        // options={{
-        //   headerStyle: {
-        //     height: 90,
-        //   },
-        //   headerTitle: () => (
-        //     <Header title='Review Details' navigation={navigation} />
-        //   ),
-        // }}
+        options={{
+          title: 'Review Details',
+        }}
       />
     </Stack.Navigator>
     // </NavigationContainer>

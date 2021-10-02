@@ -33,11 +33,12 @@ const styles = StyleSheet.create({
   headerText: {
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#333',
+    color: '#fff',
     letterSpacing: 1,
   },
   icon: {
     position: 'absolute',
     left: 16,
+    color: '#fff',
   },
 });
