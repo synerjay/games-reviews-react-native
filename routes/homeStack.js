@@ -3,8 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/home';
 import ReviewDetails from '../screens/reviewDetails';
+import Header from '../shared/header';
 
-const HomeStack = () => {
+const HomeStack = ({ navigation }) => {
   const Stack = createNativeStackNavigator();
 
   return (
@@ -19,12 +20,24 @@ const HomeStack = () => {
       <Stack.Screen
         name='Home'
         component={Home}
-        options={{ title: 'GameZone' }}
+        options={{
+          headerStyle: {
+            height: 90,
+          },
+          headerTitle: () => <Header title='Home' navigation={navigation} />,
+        }}
       />
       <Stack.Screen
         name='Review Details'
         component={ReviewDetails}
-        options={{ title: 'Reviews Details' }}
+        // options={{
+        //   headerStyle: {
+        //     height: 90,
+        //   },
+        //   headerTitle: () => (
+        //     <Header title='Review Details' navigation={navigation} />
+        //   ),
+        // }}
       />
     </Stack.Navigator>
     // </NavigationContainer>

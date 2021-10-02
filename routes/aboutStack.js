@@ -2,8 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import About from '../screens/about';
+import Header from '../shared/header';
 
-const AboutStack = () => {
+const AboutStack = ({ navigation }) => {
   const Stack = createNativeStackNavigator();
 
   return (
@@ -18,7 +19,12 @@ const AboutStack = () => {
       <Stack.Screen
         name='About'
         component={About}
-        options={{ title: 'About' }}
+        options={{
+          headerStyle: {
+            height: 90,
+          },
+          headerTitle: () => <Header title='About' navigation={navigation} />,
+        }}
       />
     </Stack.Navigator>
     // </NavigationContainer>
