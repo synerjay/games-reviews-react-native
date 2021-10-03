@@ -14,7 +14,14 @@ export default function ReviewDetails({ navigation, route }) {
         <Text>{rating} </Text>
         <View style={styles.rating}>
           <Text>GameZone rating: </Text>
-          <Image source={images.ratings[rating]} />
+          {/* <Image source={images.ratings[rating]} /> */}
+          <View style={styles.hearts}>
+            {Array(rating)
+              .fill()
+              .map(() => (
+                <Image source={require('../assets/rating-1.png')} />
+              ))}
+          </View>
         </View>
       </Card>
     </View>
@@ -22,6 +29,9 @@ export default function ReviewDetails({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
+  hearts: {
+    flexDirection: 'row',
+  },
   rating: {
     flexDirection: 'row',
     justifyContent: 'center',
