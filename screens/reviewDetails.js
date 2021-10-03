@@ -11,12 +11,11 @@ export default function ReviewDetails({ navigation, route }) {
       <Card>
         <Text>{title} </Text>
         <Text>{body} </Text>
-        <Text>{rating} </Text>
         <View style={styles.rating}>
           <Text>GameZone rating: </Text>
           {/* <Image source={images.ratings[rating]} /> */}
           <View style={styles.hearts}>
-            {Array(rating)
+            {Array(parseInt(rating))
               .fill()
               .map(() => (
                 <Image source={require('../assets/rating-1.png')} />

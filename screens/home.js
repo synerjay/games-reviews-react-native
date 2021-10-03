@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
   Modal,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 import Card from '../shared/card';
 import ReviewForm from './reviewForm';
@@ -35,6 +37,14 @@ export default function Home({ navigation }) {
     },
   ]);
 
+  const addReview = (review) => {
+    review.key = Math.random().toString();
+    setReviews((currentReviews) => {
+      return [review, ...currentReviews];
+    });
+    setModalOpen(false);
+  };
+
   return (
     <View style={globalStyles.container}>
       <Modal visible={modalOpen} animationType='slide'>
@@ -45,7 +55,7 @@ export default function Home({ navigation }) {
             style={{ ...styles.modalToggle, ...styles.modalClose }}
             onPress={() => setModalOpen(false)}
           />
-          <ReviewForm />
+          <ReviewForm addReview={addReview} />
         </View>
       </Modal>
 
