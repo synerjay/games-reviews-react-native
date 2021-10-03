@@ -12,10 +12,10 @@ const HomeStack = ({ navigation }) => {
     // <NavigationContainer>
     <Stack.Navigator
       initialRouteName='Main'
-      screenOptions={{
-        headerStyle: { backgroundColor: '#333', height: 90 }, // change the header color and height
-        headerTintColor: '#fff', // change font color
-      }}
+      // screenOptions={{
+      //   headerStyle: { backgroundColor: '#333', height: 90 }, // change the header color and height
+      //   headerTintColor: '#fff', // change font color
+      // }}
     >
       <Stack.Screen
         name='Main'
@@ -23,7 +23,7 @@ const HomeStack = ({ navigation }) => {
         options={{
           headerStyle: {
             // backgroundColor: '#333',
-            height: 100,
+            height: '100%',
           },
           headerTitle: () => (
             <Header title='Game Zone' navigation={navigation} />

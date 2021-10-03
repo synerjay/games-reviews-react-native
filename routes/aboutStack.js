@@ -25,7 +25,9 @@ const AboutStack = ({ navigation }) => {
             height: 90, // change the header color and height
           },
           headerTintColor: '#fff', // change font color
-          headerTitle: () => <Header title='About' navigation={navigation} />,
+          headerTitle: () => (
+            <Header title='About GameZone' navigation={navigation} />
+          ),
         }}
       />
     </Stack.Navigator>
