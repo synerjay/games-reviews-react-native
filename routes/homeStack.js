@@ -22,10 +22,12 @@ const HomeStack = ({ navigation }) => {
         component={Home}
         options={{
           headerStyle: {
-            backgroundColor: '#333',
-            height: 90,
+            // backgroundColor: '#333',
+            height: 100,
           },
-          headerTitle: () => <Header title='Home' navigation={navigation} />,
+          headerTitle: () => (
+            <Header title='Game Zone' navigation={navigation} />
+          ),
         }}
       />
       <Stack.Screen
